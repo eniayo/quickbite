@@ -1,0 +1,569 @@
+{
+  "version": "39.0.0",
+  "artifacts": {
+    "QuickBiteStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "QuickBiteStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "QuickBiteStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://640168423636/us-east-1",
+      "properties": {
+        "templateFile": "QuickBiteStack.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "Environment": "production",
+          "Owner": "DevOps",
+          "Project": "QuickBite"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::640168423636:role/cdk-hnb659fds-deploy-role-640168423636-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::640168423636:role/cdk-hnb659fds-cfn-exec-role-640168423636-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-640168423636-us-east-1/860880449fb8a72adc627d1d2250cac3d1a229a95a9bba31fffcd48be516e770.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "QuickBiteStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::640168423636:role/cdk-hnb659fds-lookup-role-640168423636-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "QuickBiteStack.assets"
+      ],
+      "metadata": {
+        "/QuickBiteStack": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "Environment",
+                "Value": "production"
+              },
+              {
+                "Key": "Owner",
+                "Value": "DevOps"
+              },
+              {
+                "Key": "Project",
+                "Value": "QuickBite"
+              }
+            ]
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCB5933F7E"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet1Subnet390C5398"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet1RouteTable4035D107"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet1RouteTableAssociationEB4F0FBD"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet1DefaultRouteDF29E60C"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet1EIPA2493484"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet1NATGateway959833BA"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet2SubnetC596EE12"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet2RouteTable3DD8AAE7"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet2RouteTableAssociationD79B6A4E"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/publicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCpublicSubnet2DefaultRoute9770BF3C"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/privateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCprivateSubnet1SubnetF792FAD4"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/privateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCprivateSubnet1RouteTableE363DD1C"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/privateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCprivateSubnet1RouteTableAssociationC88991EA"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/privateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCprivateSubnet1DefaultRoute61EF2309"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/privateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCprivateSubnet2SubnetA58AE8A8"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/privateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCprivateSubnet2RouteTable2AE5AE57"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/privateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCprivateSubnet2RouteTableAssociation60B2F0FB"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/privateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCprivateSubnet2DefaultRoute5452BFB1"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCIGW10B98A19"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteVPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteVPCVPCGW8489B23C"
+          }
+        ],
+        "/QuickBiteStack/EksSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EksSecurityGroup1CEAF9CC"
+          }
+        ],
+        "/QuickBiteStack/KubectlLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "KubectlLayer600207B5"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/KubectlHandlerRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterKubectlHandlerRole1C1969C0"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/KubectlHandlerRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterKubectlHandlerRoleDefaultPolicy5315AAA4"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterRole3305139C"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/Resource/CreationRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterCreationRole1C1F12D9"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/Resource/CreationRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterCreationRoleDefaultPolicy685C0687"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/Resource/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteCluster50665CCD"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/KubectlReadyBarrier": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterKubectlReadyBarrierA6A54D49"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/HasEcrPublic": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterHasEcrPublic7A53002E"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/NodegroupManagedNodes/NodeGroupRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterNodegroupManagedNodesNodeGroupRole1D5DBAE2"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/NodegroupManagedNodes/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterNodegroupManagedNodes280B46F2"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/AwsAuth/manifest/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClusterAwsAuthmanifest2DFF476B"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/manifest-AppNamespace/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClustermanifestAppNamespace667C30E7"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/manifest-WebAppDeployment/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClustermanifestWebAppDeployment1A3CAE18"
+          }
+        ],
+        "/QuickBiteStack/QuickBiteCluster/manifest-WebAppService/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteClustermanifestWebAppService4F866F99"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/NodeProxyAgentLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NodeProxyAgentLayer924C1971"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/OnEventHandler": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 0
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/OnEventHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OnEventHandlerServiceRole15A26729"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/OnEventHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OnEventHandler42BEBAE0"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/IsCompleteHandler": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 0
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/IsCompleteHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsCompleteHandlerServiceRole5810CC58"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/IsCompleteHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsCompleteHandler7073F4DA"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/framework-onEvent/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkonEventServiceRole9FF04296"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkonEventServiceRoleDefaultPolicy48CD2133"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkonEvent83C1D0A7"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/framework-isComplete/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkisCompleteServiceRoleB1087139"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/framework-isComplete/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkisCompleteServiceRoleDefaultPolicy2E7140AC"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/framework-isComplete/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkisComplete26D7B0CB"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/framework-onTimeout/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkonTimeoutServiceRole28643D26"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/framework-onTimeout/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkonTimeoutServiceRoleDefaultPolicy2688969F"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/framework-onTimeout/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkonTimeout0B47CA38"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/waiter-state-machine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderwaiterstatemachineRole0C7159F9"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/waiter-state-machine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderwaiterstatemachineRoleDefaultPolicyD3C3DA1A"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/waiter-state-machine/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderwaiterstatemachineLogGroupDD693A98"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/Provider/waiter-state-machine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Providerwaiterstatemachine5D4A9DF0"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/QuickBiteStackawscdkawseksClusterResourceProviderOnEventHandlerServiceRoleFE780F56Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteStackawscdkawseksClusterResourceProviderOnEventHandlerServiceRoleFE780F56Arn"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/QuickBiteStackawscdkawseksClusterResourceProviderIsCompleteHandlerServiceRoleADD0B4E3Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteStackawscdkawseksClusterResourceProviderIsCompleteHandlerServiceRoleADD0B4E3Arn"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider/QuickBiteStackawscdkawseksClusterResourceProviderframeworkonEvent1033D729Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteStackawscdkawseksClusterResourceProviderframeworkonEvent1033D729Arn"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.ClusterResourceProvider.NestedStack/@aws-cdk--aws-eks.ClusterResourceProvider.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awscdkawseksClusterResourceProviderNestedStackawscdkawseksClusterResourceProviderNestedStackResource9827C454"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/Handler": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Handler886CB40B"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwsCliLayerF44AAF94"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/Provider/framework-onEvent/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkonEventServiceRole9FF04296"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/Provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkonEventServiceRoleDefaultPolicy48CD2133"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/Provider/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProviderframeworkonEvent83C1D0A7"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/QuickBiteStackawscdkawseksKubectlProviderframeworkonEventB2645501Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuickBiteStackawscdkawseksKubectlProviderframeworkonEventB2645501Arn"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/reference-to-QuickBiteStackKubectlLayerE8464A42Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoQuickBiteStackKubectlLayerE8464A42Ref"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/reference-to-QuickBiteStackQuickBiteClusterKubectlHandlerRole5AB33988Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoQuickBiteStackQuickBiteClusterKubectlHandlerRole5AB33988Arn"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/reference-to-QuickBiteStackQuickBiteVPCprivateSubnet1Subnet6FA9289CRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoQuickBiteStackQuickBiteVPCprivateSubnet1Subnet6FA9289CRef"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/reference-to-QuickBiteStackQuickBiteVPCprivateSubnet2Subnet0BA730F0Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoQuickBiteStackQuickBiteVPCprivateSubnet2Subnet0BA730F0Ref"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider/reference-to-QuickBiteStackQuickBiteCluster44C978A5ClusterSecurityGroupId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoQuickBiteStackQuickBiteCluster44C978A5ClusterSecurityGroupId"
+          }
+        ],
+        "/QuickBiteStack/@aws-cdk--aws-eks.KubectlProvider.NestedStack/@aws-cdk--aws-eks.KubectlProvider.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awscdkawseksKubectlProviderNestedStackawscdkawseksKubectlProviderNestedStackResourceA7AEBA6B"
+          }
+        ],
+        "/QuickBiteStack/WebAppRepository/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebAppRepositoryE1B58524"
+          }
+        ],
+        "/QuickBiteStack/ClusterName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ClusterName"
+          }
+        ],
+        "/QuickBiteStack/WebAppRepositoryUri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebAppRepositoryUri"
+          }
+        ],
+        "/QuickBiteStack/EksCommandToGetServiceEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EksCommandToGetServiceEndpoint"
+          }
+        ],
+        "/QuickBiteStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/QuickBiteStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/QuickBiteStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "QuickBiteStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

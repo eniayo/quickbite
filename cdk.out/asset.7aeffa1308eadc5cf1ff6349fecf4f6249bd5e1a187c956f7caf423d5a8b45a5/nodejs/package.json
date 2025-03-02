@@ -1,0 +1,19 @@
+{
+  "name": "kubectl-layer",
+  "version": "1.0.0",
+  "description": "Lambda layer containing kubectl binary for Kubernetes operations",
+  "main": "index.js",
+  "keywords": [
+    "kubectl",
+    "kubernetes",
+    "aws",
+    "lambda",
+    "layer"
+  ],
+  "dependencies": {
+    "kubernetes-client": "^9.0.0"
+  },
+  "author": "QuickBite Team",
+  "license": "MIT"
+}
+

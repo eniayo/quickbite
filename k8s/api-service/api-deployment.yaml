@@ -1,0 +1,97 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quickbite-api
+  labels:
+    app: quickbite-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: quickbite-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: quickbite-api
+    spec:
+      containers:
+      - name: api
+        image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/quickbite-api:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+          limits:
+            cpu: "1000m"
+            memory: "2Gi"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: quickbite-config
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: quickbite-config
+              key: DB_PORT
+        - name: DB_NAME
+          value: "quickbite"
+        - name: DB_USER
+          value: "postgres"
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: quickbite-secrets
+              key: DB_PASSWORD
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: quickbite-config
+              key: REDIS_HOST
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: quickbite-config
+              key: REDIS_PORT
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: quickbite-secrets
+              key: JWT_SECRET
+        - name: STRIPE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: quickbite-secrets
+              key: STRIPE_API_KEY
+        - name: API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: quickbite-config
+              key: API_URL
+        - name: ASSETS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: quickbite-config
+              key: ASSETS_URL
